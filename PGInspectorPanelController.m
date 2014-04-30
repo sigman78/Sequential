@@ -309,8 +309,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
 	if(tableColumn == labelColumn) {
-		[cell setAlignment:NSRightTextAlignment];
-		[cell setFont:[[NSFontManager sharedFontManager] convertFont:[cell font] toHaveTrait:NSBoldFontMask]];
+        NSTextView* _cell = (NSTextView*)cell;
+		[_cell setAlignment:NSRightTextAlignment];
+		[_cell setFont:[[NSFontManager sharedFontManager] convertFont:[_cell font] toHaveTrait:NSBoldFontMask]];
 	}
 }
 
